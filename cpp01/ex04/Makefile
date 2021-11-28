@@ -1,4 +1,4 @@
-NAME =		main
+NAME =		replace
 
 CC =		clang++
 

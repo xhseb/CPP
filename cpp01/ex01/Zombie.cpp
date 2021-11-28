@@ -2,7 +2,7 @@
 
 Zombie::Zombie()
 {
-    name = "daekim";
+    name = "zombie";
 }
 
 Zombie::Zombie(std::string name)
