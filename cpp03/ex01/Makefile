@@ -1,17 +1,21 @@
-NAME =		KarenFilter
+NAME =		ScavTrap
 
 CC =		clang++
 
 CXXFLAGS =	-std=c++98 -Wall -Wextra -Werror
 
-SRC =		main.cpp Karen.cpp
+SRC =		ClapTrap.cpp ScavTrap.cpp main.cpp 
 
-OBJ = 		$(SRC:.cpp=.o)
+SRC_PATH =	$(addprefix ./srcs/, $(SRC))
+
+OBJ = 	$(SRC_PATH:.cpp=.o)
+
+INC_PATH = 	./includes
 
 all :		$(NAME)
 
 $(NAME) : $(OBJ)
-		 $(CC) $(CXXFLAGS) -o $@ $^
+		$(CC) $(CXXFLAGS) -I $(INC_PATH) -o $@ $^
 
 clean :
 			rm -f $(OBJ)

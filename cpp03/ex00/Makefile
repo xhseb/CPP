@@ -1,10 +1,10 @@
-NAME =		KarenFilter
+NAME =		ClapTrap
 
 CC =		clang++
 
 CXXFLAGS =	-std=c++98 -Wall -Wextra -Werror
 
-SRC =		main.cpp Karen.cpp
+SRC =		main.cpp ClapTrap.cpp
 
 OBJ = 		$(SRC:.cpp=.o)
 
