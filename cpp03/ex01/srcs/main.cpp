@@ -3,7 +3,7 @@
 int main()
 {
 	{	
-		ClapTrap soldier("sonkang");
+		ClapTrap soldier("soldier");
 		
 		soldier.attack("peter");
 		soldier.beRepaired(1);
@@ -11,7 +11,7 @@ int main()
 	}
     std::cout << std::endl;
 	{
-		ScavTrap james("JAMES");
+		ScavTrap james("james");
 
 		james.guardGate();
 		james.attack("peter");

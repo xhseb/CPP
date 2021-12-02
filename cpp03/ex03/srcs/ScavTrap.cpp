@@ -2,60 +2,60 @@
 
 ScavTrap::ScavTrap(void)
 {
-    Name = "noname";
-    Hitpoints = 100;
-    Energy_points = 50;
-    Attack_damage = 20;
-    std::cout << "ScavTrap <" << Name << "> is called !"<< std::endl;
+    name = "noname";
+    hitPoints = 100;
+    energyPoints = 50;
+    attackDamage = 20;
+    std::cout << "ScavTrap <" << name << "> is called !"<< std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    Hitpoints = 100;
-    Energy_points = 50;
-    Attack_damage = 20;
-    std::cout << "ScavTrap <" << Name << "> is called !"<< std::endl;
+    hitPoints = 100;
+    energyPoints = 50;
+    attackDamage = 20;
+    std::cout << "ScavTrap <" << name << "> is called !"<< std::endl;
 }
 
 ScavTrap & ScavTrap::operator=(const ScavTrap &src)
 {
 	if (this != &src)
 	{
-		Name = src.Name;
-        Hitpoints = src.Hitpoints;
-        Energy_points = src.Energy_points;
-        Attack_damage = src.Attack_damage;
+		name = src.name;
+        hitPoints = src.hitPoints;
+        energyPoints = src.energyPoints;
+        attackDamage = src.attackDamage;
 	}
 	return (*this);
 }
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap <" << Name << "> is uncalled !"<< std::endl;
+    std::cout << "ScavTrap <" << name << "> is uncalled !"<< std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
 {
 	*this = src;
-    std::cout << "ScavTrap <" << Name << "> is copy called !"<< std::endl;
+    std::cout << "ScavTrap <" << name << "> is copy called !"<< std::endl;
 }
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap <" << Name << "> is in guardGate mode !"<< std::endl;
+    std::cout << "ScavTrap <" << name << "> is in guardGate mode !"<< std::endl;
 }
 
 void ScavTrap::attack(std::string const & target)
 {
-    if (Energy_points == 0)
+    if (energyPoints == 0)
     {
-        std::cout << "ScavTrap <" << Name \
+        std::cout << "ScavTrap <" << name \
         << "> has no Energy point !" <<std::endl;
     }
     else
     {
-        Energy_points--;
-        std::cout << "ScavTrap <" << Name \
+        energyPoints--;
+        std::cout << "ScavTrap <" << name \
         << "> attacks <" << target << ">" << std::endl;
     }
 }

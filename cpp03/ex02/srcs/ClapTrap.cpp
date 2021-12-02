@@ -2,76 +2,76 @@
 
 ClapTrap::ClapTrap()
 {
-    Name = "noname";
-    Hitpoints = 10;
-    Energy_points = 10;
-    Attack_damage = 0;
-    std::cout << "ClapTrap <" << Name << "> is called !"<< std::endl;
+    name = "noname";
+    hitPoints = 10;
+    energyPoints = 10;
+    attackDamage = 0;
+    std::cout << "ClapTrap <" << name << "> is called !"<< std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
 {
-    Name = name;
-    Hitpoints = 10;
-    Energy_points = 10;
-    Attack_damage = 0;
-    std::cout << "ClapTrap <" << Name << "> is called !"<< std::endl;
+    this->name = name;
+    hitPoints = 10;
+    energyPoints = 10;
+    attackDamage = 0;
+    std::cout << "ClapTrap <" << this->name << "> is called !"<< std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
 	*this = src;
-    std::cout << "ClapTrap <" << Name << "> is copy called !"<< std::endl;
+    std::cout << "ClapTrap <" << name << "> is copy called !"<< std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap <" << Name << "> is uncalled !"<< std::endl;
+    std::cout << "ClapTrap <" << name << "> is uncalled !"<< std::endl;
 }
 
 ClapTrap & ClapTrap::operator=(const ClapTrap &src)
 {
 	if (this != &src)
 	{
-		Name = src.Name;
-        Hitpoints = src.Hitpoints;
-        Energy_points = src.Energy_points;
-        Attack_damage = src.Attack_damage;
+		name = src.name;
+        hitPoints = src.hitPoints;
+        energyPoints = src.energyPoints;
+        attackDamage = src.attackDamage;
 	}
 	return (*this);
 }
 
 void ClapTrap::attack(std::string const & target)
 {
-     if (Energy_points == 0)
+     if (energyPoints == 0)
     {
-        std::cout << "ClapTrap <" << Name \
+        std::cout << "ClapTrap <" << name \
         << "> has no Energy point !" <<std::endl;
     }
     else
     {
-        Energy_points--;
-        std::cout << "ClapTrap <" << Name \
+        energyPoints--;
+        std::cout << "ClapTrap <" << name \
         << "> attacks <" << target << ">" << std::endl;
     }
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (amount > Hitpoints)
-        Hitpoints = 0;
+    if (amount > hitPoints)
+        hitPoints = 0;
     else
-        Hitpoints -= amount;
-    std::cout << "ClapTrap <" << Name << "> causing <" << \
+        hitPoints -= amount;
+    std::cout << "ClapTrap <" << name << "> causing <" << \
     amount << "> points of damage!" <<std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (amount + Hitpoints > 10)
-        Hitpoints = 10;
+    if (amount + hitPoints > 10)
+        hitPoints = 10;
     else
-        Hitpoints += amount;
-    std::cout << "ClapTrap <" << Name << "> is repaired <" << \
-    amount << "> points of Hitpoints" <<std::endl;
+        hitPoints += amount;
+    std::cout << "ClapTrap <" << name << "> is repaired <" << \
+    amount << "> points of hitPoints" <<std::endl;
 }

@@ -2,49 +2,49 @@
 
 DiamondTrap::DiamondTrap(void)
 {
-    Name = "noname";
-    Hitpoints = FragTrap::Hitpoints;
-    Energy_points = ScavTrap::Energy_points;
-    Attack_damage = FragTrap::Attack_damage;
+    name = "noname";
+    hitPoints = FragTrap::hitPoints;
+    energyPoints = ScavTrap::energyPoints;
+    attackDamage = FragTrap::attackDamage;
 }
 
 DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
 {
-    this->Name = name;
-    ClapTrap::Name = Name + "_clap_name";
-    Hitpoints = FragTrap::Hitpoints;
-    Energy_points = ScavTrap::Energy_points;
-    Attack_damage = FragTrap::Attack_damage;
-    std::cout << "DiamondTrap <" << Name << "> is called !"<< std::endl;
+    this->name = name;
+    ClapTrap::name = name + "_clap_name";
+    hitPoints = FragTrap::hitPoints;
+    energyPoints = ScavTrap::energyPoints;
+    attackDamage = FragTrap::attackDamage;
+    std::cout << "DiamondTrap <" << name << "> is called !"<< std::endl;
 }
 
 DiamondTrap & DiamondTrap::operator=(const DiamondTrap &src)
 {
 	if (this != &src)
 	{
-		Name = src.Name;
-        Hitpoints = src.Hitpoints;
-        Energy_points = src.Energy_points;
-        Attack_damage = src.Attack_damage;
+		name = src.name;
+        hitPoints = src.hitPoints;
+        energyPoints = src.energyPoints;
+        attackDamage = src.attackDamage;
 	}
 	return (*this);
 }
 
 DiamondTrap::~DiamondTrap()
 {
-    std::cout << "DiamondTrap <" << Name << "> is uncalled !"<< std::endl;
+    std::cout << "DiamondTrap <" << name << "> is uncalled !"<< std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &src) : ScavTrap(src), FragTrap(src)
 {
 	*this = src;
-    std::cout << "DiamondTrap <" << Name << "> is copy called !"<< std::endl;
+    std::cout << "DiamondTrap <" << name << "> is copy called !"<< std::endl;
 }
 
 void DiamondTrap::whoAmI()
 {
-    std::cout << "DiamondTrap name is <" << Name << ">"<< std::endl;
-    std::cout << "ClapTrap name is <" << ClapTrap::Name << ">"<< std::endl;
+    std::cout << "DiamondTrap name is <" << name << ">"<< std::endl;
+    std::cout << "ClapTrap name is <" << ClapTrap::name << ">"<< std::endl;
 }
 
 void DiamondTrap::attack(std::string const & target)

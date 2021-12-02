@@ -3,17 +3,17 @@
 FragTrap::FragTrap(void)
 {
     Name = "noname";
-   Hitpoints = 100;
-   Energy_points = 100;
-   Attack_damage = 30;
+   hitPoints = 100;
+   energyPoints = 100;
+   attackDamage = 30;
    std::cout << "FragTrap <" << Name << "> is called !"<< std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-   Hitpoints = 100;
-   Energy_points = 100;
-   Attack_damage = 30;
+   hitPoints = 100;
+   energyPoints = 100;
+   attackDamage = 30;
    std::cout << "FragTrap <" << Name << "> is called !"<< std::endl;
 }
 
@@ -22,9 +22,9 @@ FragTrap & FragTrap::operator=(const FragTrap &src)
 	if (this != &src)
 	{
 		Name = src.Name;
-      Hitpoints = src.Hitpoints;
-      Energy_points = src.Energy_points;
-      Attack_damage = src.Attack_damage;
+      hitPoints = src.hitPoints;
+      energyPoints = src.energyPoints;
+      attackDamage = src.attackDamage;
 	}
 	return (*this);
 }
