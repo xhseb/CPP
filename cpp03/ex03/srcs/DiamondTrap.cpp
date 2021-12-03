@@ -6,9 +6,10 @@ DiamondTrap::DiamondTrap(void)
     hitPoints = FragTrap::hitPoints;
     energyPoints = ScavTrap::energyPoints;
     attackDamage = FragTrap::attackDamage;
+    std::cout << "DiamondTrap <" << name << "> is called !"<< std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name)
 {
     this->name = name;
     ClapTrap::name = name + "_clap_name";
@@ -30,15 +31,15 @@ DiamondTrap & DiamondTrap::operator=(const DiamondTrap &src)
 	return (*this);
 }
 
-DiamondTrap::~DiamondTrap()
-{
-    std::cout << "DiamondTrap <" << name << "> is uncalled !"<< std::endl;
-}
-
-DiamondTrap::DiamondTrap(const DiamondTrap &src) : ScavTrap(src), FragTrap(src)
+DiamondTrap::DiamondTrap(const DiamondTrap &src) : ClapTrap(src), ScavTrap(src), FragTrap(src)
 {
 	*this = src;
     std::cout << "DiamondTrap <" << name << "> is copy called !"<< std::endl;
+}
+
+DiamondTrap::~DiamondTrap()
+{
+    std::cout << "DiamondTrap <" << name << "> is uncalled !"<< std::endl;
 }
 
 void DiamondTrap::whoAmI()

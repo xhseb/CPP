@@ -17,6 +17,11 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     std::cout << "ScavTrap <" << name << "> is called !"<< std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
+{
+    std::cout << "ScavTrap <" << name << "> is copy called !"<< std::endl;
+}
+
 ScavTrap & ScavTrap::operator=(const ScavTrap &src)
 {
 	if (this != &src)
@@ -34,12 +39,6 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap <" << name << "> is uncalled !"<< std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
-{
-	*this = src;
-    std::cout << "ScavTrap <" << name << "> is copy called !"<< std::endl;
-}
-
 void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap <" << name << "> is in guardGate mode !"<< std::endl;
@@ -55,6 +54,7 @@ void ScavTrap::attack(std::string const & target)
     else
     {
         energyPoints--;
+        attackDamage += 10;
         std::cout << "ScavTrap <" << name \
         << "> attacks <" << target << ">" << std::endl;
     }

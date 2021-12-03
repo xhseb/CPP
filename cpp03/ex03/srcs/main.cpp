@@ -6,15 +6,15 @@ int main()
     std::cout << "**  NONAME  **" <<std::endl;
     std::cout << std::endl;
     {
-        DiamondTrap yesi;
+        DiamondTrap dia;
         std::cout << std::endl;
-        yesi.attack("peter");
-        yesi.beRepaired(100);
-        yesi.takeDamage(200);
+        dia.attack("peter");
+        dia.beRepaired(100);
+        dia.takeDamage(50);
 
-        yesi.highFiveGuys();
-        yesi.guardGate();
-        yesi.whoAmI();
+        dia.highFiveGuys();
+        dia.guardGate();
+        dia.whoAmI();
     }
     std::cout << std::endl;
     std::cout << "**    STRING  **" <<std::endl;
@@ -24,7 +24,7 @@ int main()
         std::cout << std::endl;
         harry.attack("james");
         harry.beRepaired(100);
-        harry.takeDamage(200);
+        harry.takeDamage(50);
 
         harry.highFiveGuys();
         harry.guardGate();
@@ -41,7 +41,7 @@ int main()
 
         peter.attack("peter");
         peter.beRepaired(100);
-        peter.takeDamage(200);
+        peter.takeDamage(50);
 
         peter.highFiveGuys();
         peter.guardGate();

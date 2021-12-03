@@ -24,7 +24,7 @@ int main()
 
 		soldier.guardGate();
         soldier.attack("james");
-        soldier.takeDamage(2000);
+        soldier.takeDamage(50);
         soldier.beRepaired(100);
     }
     std::cout << std::endl;
@@ -34,7 +34,7 @@ int main()
 
 		manB.guardGate();
         manB.attack("james");
-        manB.takeDamage(2000);
+        manB.takeDamage(50);
         manB.beRepaired(100);
     }
 

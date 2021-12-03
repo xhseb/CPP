@@ -24,11 +24,6 @@ ClapTrap::ClapTrap(const ClapTrap &src)
     std::cout << "ClapTrap <" << name << "> is copy called !"<< std::endl;
 }
 
-ClapTrap::~ClapTrap()
-{
-    std::cout << "ClapTrap <" << name << "> is uncalled !"<< std::endl;
-}
-
 ClapTrap & ClapTrap::operator=(const ClapTrap &src)
 {
 	if (this != &src)
@@ -41,6 +36,11 @@ ClapTrap & ClapTrap::operator=(const ClapTrap &src)
 	return (*this);
 }
 
+ClapTrap::~ClapTrap()
+{
+    std::cout << "ClapTrap <" << name << "> is uncalled !"<< std::endl;
+}
+
 void ClapTrap::attack(std::string const & target)
 {
      if (energyPoints == 0)
@@ -51,6 +51,7 @@ void ClapTrap::attack(std::string const & target)
     else
     {
         energyPoints--;
+        attackDamage += 10;
         std::cout << "ClapTrap <" << name \
         << "> attacks <" << target << ">" << std::endl;
     }
@@ -58,12 +59,15 @@ void ClapTrap::attack(std::string const & target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (amount > hitPoints)
-        hitPoints = 0;
-    else
-        hitPoints -= amount;
-    std::cout << "ClapTrap <" << name << "> causing <" << \
+    std::cout << "ClapTrap <" << name << "> takes <" << \
     amount << "> points of damage!" <<std::endl;
+    if (amount < hitPoints)
+        hitPoints -= amount;
+    else
+    {
+        hitPoints = 0;
+        std::cout << "ClapTrap <" << name << " > has no hitPoints..." << std::endl;
+    }
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

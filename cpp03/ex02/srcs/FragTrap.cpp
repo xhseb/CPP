@@ -2,11 +2,11 @@
 
 FragTrap::FragTrap(void)
 {
-    Name = "noname";
+    name = "noname";
    hitPoints = 100;
    energyPoints = 100;
    attackDamage = 30;
-   std::cout << "FragTrap <" << Name << "> is called !"<< std::endl;
+   std::cout << "FragTrap <" << name << "> is called !"<< std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -14,14 +14,14 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
    hitPoints = 100;
    energyPoints = 100;
    attackDamage = 30;
-   std::cout << "FragTrap <" << Name << "> is called !"<< std::endl;
+   std::cout << "FragTrap <" << this->name << "> is called !"<< std::endl;
 }
 
 FragTrap & FragTrap::operator=(const FragTrap &src)
 {
 	if (this != &src)
 	{
-		Name = src.Name;
+		name = src.name;
       hitPoints = src.hitPoints;
       energyPoints = src.energyPoints;
       attackDamage = src.attackDamage;
@@ -29,18 +29,17 @@ FragTrap & FragTrap::operator=(const FragTrap &src)
 	return (*this);
 }
 
-FragTrap::~FragTrap()
-{
-   std::cout << "FragTrap <" << Name << "> is uncalled !"<< std::endl;
-}
-
 FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 {
-	*this = src;
-   std::cout << "FragTrap <" << Name << "> is copy called !"<< std::endl;
+   std::cout << "FragTrap <" << name << "> is copy called !"<< std::endl;
+}
+
+FragTrap::~FragTrap()
+{
+   std::cout << "FragTrap <" << name << "> is uncalled !"<< std::endl;
 }
 
 void FragTrap::highFiveGuys()
 {
-    std::cout << "FragTrap <" << Name << "> HighFive !!"<< std::endl;
+    std::cout << "FragTrap <" << name << "> HighFive !!"<< std::endl;
 }

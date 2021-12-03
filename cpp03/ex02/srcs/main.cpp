@@ -3,7 +3,7 @@
 int main()
 {
 	{	
-		ClapTrap soldier("sonkang");
+		ClapTrap soldier("jenny");
 		
 		soldier.attack("peter");
 		soldier.beRepaired(1);
@@ -11,7 +11,7 @@ int main()
 	}
     std::cout << std::endl;
 	{
-		FragTrap james("JAMES");
+		FragTrap james("james");
 
 		james.highFiveGuys();
 		james.attack("peter");
@@ -24,7 +24,7 @@ int main()
 
 		soldier.highFiveGuys();
         soldier.attack("james");
-        soldier.takeDamage(2000);
+        soldier.takeDamage(50);
         soldier.beRepaired(100);
     }
     std::cout << std::endl;
@@ -34,9 +34,8 @@ int main()
 
 		manB.highFiveGuys();
         manB.attack("james");
-        manB.takeDamage(2000);
+        manB.takeDamage(50);
         manB.beRepaired(100);
     }
-
 	return (0);
 }
