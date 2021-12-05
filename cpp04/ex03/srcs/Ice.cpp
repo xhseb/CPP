@@ -3,12 +3,12 @@
 Ice::Ice()
 {
 	type = "ice";
-	std::cout << "new Ice!" << std::endl;
+	std::cout << "New Ice!" << std::endl;
 }
 
 Ice::Ice(const Ice& src) : AMateria (src)
 {
-	std::cout << "new Ice!" << std::endl;
+	std::cout << "Copy Ice!" << std::endl;
 }
 
 Ice & Ice::operator=(const Ice& src)
@@ -22,7 +22,7 @@ Ice & Ice::operator=(const Ice& src)
 
 Ice::~Ice()
 {
-	std::cout << "delete Ice!" << std::endl;
+	std::cout << "Delete Ice!" << std::endl;
 }
 
 void Ice::use(ICharacter &target)

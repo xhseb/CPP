@@ -3,8 +3,8 @@
 Dog::Dog(void)
 {
 	type = "Dog";
-	brain = new Brain;
 	std::cout << "Dog Born!" << std::endl;
+	brain = new Brain;
 }
 
 Dog::Dog(const Dog &src) : Animal(src)

@@ -4,13 +4,13 @@ MateriaSource::MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
 		materia[i] = NULL;
-	std::cout << "new materiaSource!" << std::endl;
+	std::cout << "New MateriaSource!" << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& src)
 {
 	*this = src;
-	std::cout << "copy materiaSource!" << std::endl;
+	std::cout << "Copy materiaSource!" << std::endl;
 }
 
 MateriaSource & MateriaSource::operator=(const MateriaSource& src)
@@ -37,7 +37,7 @@ MateriaSource::~MateriaSource()
 			delete materia[i];
 		}
 	}
-	std::cout << "delete MateriaSource!" << std::endl;
+	std::cout << "Delete MateriaSource!" << std::endl;
 }
 
 void MateriaSource::learnMateria(AMateria *src)

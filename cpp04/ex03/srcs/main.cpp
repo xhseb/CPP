@@ -10,7 +10,8 @@ int main()
 	src->learnMateria(new Cure());
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-
+	std::cout << std::endl;
+	
 	ICharacter* me = new Character("me");
 	ICharacter* bob = new Character("bob");
 
@@ -18,7 +19,6 @@ int main()
 	AMateria* tmp1;
 	tmp1 = src->createMateria("ice");
 	me->equip(tmp1);
-
 	me->use(0, *bob);
 
 	std::cout << std::endl << "------- second cure -------" << std::endl;
@@ -26,7 +26,6 @@ int main()
 	AMateria *tmp2;
 	tmp2 = src->createMateria("cure");
 	me->equip(tmp2);
-
 	me->use(1, *bob);
 
 	std::cout << std::endl << "------- third fire -------" << std::endl;
@@ -34,7 +33,6 @@ int main()
 	AMateria *tmp3;
 	tmp3 = src->createMateria("fire");
 	me->equip(tmp3);
-
 	me->use(2, *bob);
 
 	std::cout << std::endl << "------- third ice -------" << std::endl;
@@ -42,48 +40,43 @@ int main()
 	AMateria *tmp4;
 	tmp4 = src->createMateria("ice");
 	me->equip(tmp4);
-
 	me->use(2, *bob);
-	
+
+	std::cout << std::endl << "------- unequip first materia -------" << std::endl;
+
 	me->unequip(0);
 	delete tmp1;
-
 	me->use(0, *bob);
-
 
 	std::cout << std::endl << "------- first fill ice -------" << std::endl;
 
 	AMateria *tmp5;
 	tmp5 = src->createMateria("ice");
 	me->equip(tmp5);
-
 	me->use(0, *bob);
-	
 
 	std::cout << std::endl << "------- fourth cure -------" << std::endl;
 
 	AMateria *tmp6;
 	tmp6 = src->createMateria("cure");
 	me->equip(tmp6);
-
-	me->use(4, *bob);
-
+	me->use(3, *bob);
 
 	std::cout << std::endl << "------- fifth full -------" << std::endl;
 
 	AMateria *tmp7;
 	tmp7 = src->createMateria("ice");
 	me->equip(tmp7);
-
-	me->use(5, *bob);
-	me->unequip(5);
+	me->use(4, *bob);
+	me->unequip(4);
 	delete tmp7;
 
-	ICharacter *james = new Character(*dynamic_cast<Character *>(me));
-	delete james;
+	std::cout << std::endl << "---------------------------" << std::endl;
 
 	delete bob;
+	std::cout << std::endl;
 	delete me;
+	std::cout << std::endl;
 	delete src;
 	
 	return 0;

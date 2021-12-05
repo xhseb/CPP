@@ -2,13 +2,13 @@
 
 WrongAnimal::WrongAnimal(void)
 {
-	type = "WrongAnimal!";
+	type = "WrongAnimal";
 	std::cout << "WrongAnimal Born!" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &src)
 {
-	std::cout << "WrongAnimal Born!" << std::endl;
+	std::cout << "WrongAnimal copy Born!" << std::endl;
 	*this = src;
 }
 
@@ -33,6 +33,6 @@ std::string WrongAnimal::getType(void) const
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << "haha" << std::endl;
+	std::cout << "Wrong Wrong" << std::endl;
 	return ;
 }

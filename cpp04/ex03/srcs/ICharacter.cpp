@@ -5,13 +5,7 @@ Character::Character()
 	Name = "";
 	for (int i = 0; i < 4; i++)
 		materia[i] = NULL;
-	std::cout << "new Character!" << std::endl;
-}
-
-Character::Character(Character& src)
-{
-	*this = src;
-	std::cout << "copy Character!" << std::endl;
+	std::cout << "New Character!" << std::endl;
 }
 
 Character::Character(std::string const &Name)
@@ -19,7 +13,13 @@ Character::Character(std::string const &Name)
 	this->Name = Name;
 	for (int i = 0; i < 4; i++)
 		materia[i] = NULL;
-	std::cout << "new Character!" << std::endl;
+	std::cout << "New Character!" << std::endl;
+}
+
+Character::Character(Character& src)
+{
+	*this = src;
+	std::cout << "Copy Character!" << std::endl;
 }
 
 Character & Character::operator=(Character& src)
@@ -35,8 +35,6 @@ Character & Character::operator=(Character& src)
 				delete src.materia[i];
 				src.materia[i] = 0;
 			}
-			else
-				materia[i] = NULL;
 		}
 	}
 	return (*this);
@@ -51,7 +49,7 @@ Character::~Character()
 			delete materia[i];
 		}
 	}
-	std::cout << "delete Character!" << std::endl;
+	std::cout << "Delete Character!" << std::endl;
 }
 
 std::string const &Character::getName() const

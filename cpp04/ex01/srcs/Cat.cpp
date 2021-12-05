@@ -3,8 +3,8 @@
 Cat::Cat(void)
 {
 	type = "Cat";
-	brain = new Brain;
 	std::cout << "Cat Born!" << std::endl;
+	brain = new Brain;
 }
 
 Cat::Cat(const Cat &src) : Animal(src)

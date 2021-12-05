@@ -3,12 +3,12 @@
 Cure::Cure()
 {
 	type = "cure";
-	std::cout << "new Cure!" << std::endl;
+	std::cout << "New Cure!" << std::endl;
 }
 
 Cure::Cure(const Cure& src) : AMateria (src)
 {
-	std::cout << "copy Cure!" << std::endl;
+	std::cout << "Copy Cure!" << std::endl;
 }
 
 Cure & Cure::operator=(const Cure& src)
@@ -22,7 +22,7 @@ Cure & Cure::operator=(const Cure& src)
 
 Cure::~Cure()
 {
-	std::cout << "delete Cure!" << std::endl;
+	std::cout << "Delete Cure!" << std::endl;
 }
 
 void Cure::use(ICharacter &target)

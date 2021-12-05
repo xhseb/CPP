@@ -2,13 +2,13 @@
 
 Animal::Animal(void)
 {
-	type = "Animal!";
+	type = "Animal";
 	std::cout << "Animal Born!" << std::endl;
 }
 
 Animal::Animal(const Animal &src)
 {
-	std::cout << "Animal Born!" << std::endl;
+	std::cout << "Animal copy Born!" << std::endl;
 	*this = src;
 }
 

@@ -8,7 +8,7 @@ Dog::Dog(void)
 
 Dog::Dog(const Dog &src) : Animal(src)
 {
-	std::cout << "Dog Born!" << std::endl;
+	std::cout << "Dog copy Born!" << std::endl;
 	*this = src;
 }
 
@@ -28,6 +28,6 @@ Dog & Dog::operator=(const Dog &src)
 
 void Dog::makeSound() const
 {
-	std::cout << "Wal Wal" << std::endl;
+	std::cout << "Woof woof" << std::endl;
 	return ;
 }

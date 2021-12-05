@@ -32,7 +32,7 @@ class Ice : public AMateria
 		Ice & operator=(const Ice& src);
 		virtual ~Ice();
 
-		virtual AMateria *clone() const;
+		virtual AMateria* clone() const;
 		virtual void use(ICharacter &target);
 };
 
@@ -44,6 +44,7 @@ class Cure : public AMateria
 		Cure(std::string const &type);
 		Cure & operator=(const Cure& src);
 		virtual ~Cure();
+		
 		virtual AMateria *clone() const;
 		virtual void use(ICharacter &target);
 };

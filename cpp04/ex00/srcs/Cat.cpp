@@ -8,7 +8,7 @@ Cat::Cat(void)
 
 Cat::Cat(const Cat &src) : Animal(src)
 {
-	std::cout << "Cat Born!" << std::endl;
+	std::cout << "Cat copy Born!" << std::endl;
 	*this = src;
 }
 
@@ -28,6 +28,6 @@ Cat & Cat::operator=(const Cat &src)
 
 void Cat::makeSound() const
 {
-	std::cout << "ya ya" << std::endl;
+	std::cout << "meow meow" << std::endl;
 	return ;
 }

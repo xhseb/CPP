@@ -2,7 +2,7 @@
 
 Animal::Animal(void)
 {
-	type = "Animal!";
+	type = "Animal";
 	std::cout << "Animal Born!" << std::endl;
 }
 

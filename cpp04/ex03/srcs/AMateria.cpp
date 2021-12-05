@@ -3,19 +3,19 @@
 AMateria::AMateria()
 {
 	type = "";
-	std::cout << "new AMateria!" << std::endl;
+	std::cout << "New AMateria!" << std::endl;
 }
 
 AMateria::AMateria(std::string const &type)
 {
 	this->type = type;
-	std::cout << "new AMateria!" << std::endl;
+	std::cout << "New AMateria!" << std::endl;
 }
 
 AMateria::AMateria(const AMateria& src)
 {
 	*this = src;
-	std::cout << "copy AMateria!" << std::endl;
+	std::cout << "Copy AMateria!" << std::endl;
 }
 
 AMateria & AMateria::operator=(const AMateria& src)
@@ -29,7 +29,7 @@ AMateria & AMateria::operator=(const AMateria& src)
 
 AMateria::~AMateria()
 {
-	std::cout << "delete AMateria!" << std::endl;
+	std::cout << "Delete AMateria!" << std::endl;
 }
 
 std::string const &AMateria::getType() const

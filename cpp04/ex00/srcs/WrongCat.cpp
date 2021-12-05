@@ -8,7 +8,7 @@ WrongCat::WrongCat(void)
 
 WrongCat::WrongCat(const WrongCat &src) : WrongAnimal(src)
 {
-	std::cout << "WrongCat Born!" << std::endl;
+	std::cout << "WrongCat copy Born!" << std::endl;
 	*this = src;
 }
 
