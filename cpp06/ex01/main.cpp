@@ -23,12 +23,14 @@ int	main()
 	Data *ptr;
 
 	dt.dt_show();
+	std::cout << std::endl;
+
 	i = serialize(dt.getValue());
 
-	std::cout << i << std::endl;
+	std::cout << "Serialize : " << i << std::endl;
 
 	ptr = deserialize(i);
 
-	std::cout << ptr << std::endl;
+	std::cout << "Deserialize : " << ptr << std::endl;
 	return (0);
 }
