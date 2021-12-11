@@ -3,8 +3,8 @@
 
 #include <iostream>
 
-template <typename T1>
-void iter(T1 *addr, size_t len, void(*fnp)(T1))
+template <typename T>
+void iter(T *addr, size_t len, void(*fnp)(T const &))
 {
     for (size_t i = 0; i < len; i++)
         fnp(addr[i]);

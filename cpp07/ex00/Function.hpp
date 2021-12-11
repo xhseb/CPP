@@ -3,17 +3,17 @@
 
 #include <iostream>
 
-template <typename function>
-void swap(function &a, function &b)
+template <typename T>
+void swap(T &a, T &b)
 {
-	function temp;
+	T temp;
     temp = a;
     a = b;
     b = temp;
 }
 
-template <typename function>
-function min(function a, function b)
+template <typename T>
+T min(T a, T b)
 {
 	if (a == b)
 		return (b);
@@ -23,8 +23,8 @@ function min(function a, function b)
 		return (b);
 }
 
-template <typename function>
-function max(function a, function b)
+template <typename T>
+T max(T a, T b)
 {
 	if (a == b)
 		return (b);
