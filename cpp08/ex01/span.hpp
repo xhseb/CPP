@@ -6,7 +6,6 @@
 # include <sstream>
 # include <limits>
 
-
 class Span
 {
 	private:

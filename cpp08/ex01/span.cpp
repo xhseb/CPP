@@ -19,11 +19,6 @@ Span::Span(const Span &src)
 	*this = src;
 }
 
-Span::~Span()
-{
-
-}
-
 Span & Span::operator=(const Span &src)
 {
 	if (this != &src)
@@ -34,6 +29,11 @@ Span & Span::operator=(const Span &src)
 		longspan = src.longspan;
 	}
 	return (*this);
+}
+
+Span::~Span()
+{
+
 }
 
 void Span::addNumber(long long int num)
