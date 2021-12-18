@@ -11,13 +11,26 @@ class MutantStack : public std::stack<T>
     public:
         MutantStack(){};
         MutantStack(MutantStack const &src);
-        ~MutantStack(){};
         MutantStack<T>& operator=(MutantStack const &src);
+        ~MutantStack(){};
 
         typedef typename std::stack<T>::container_type::iterator iterator;
         MutantStack<T>::iterator begin();
         MutantStack<T>::iterator end();
 };
+
+template<typename T>
+MutantStack<T>::MutantStack(MutantStack const &src) : std::stack<T>(src)
+{
+    ;
+}
+
+template<typename T>
+MutantStack<T>& MutantStack<T>::operator=(MutantStack const &src)
+{
+    this->c = src.c;
+    return (*this);
+}
 
 template<typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin()
@@ -31,16 +44,4 @@ typename MutantStack<T>::iterator MutantStack<T>::end()
     return (this->c.end());
 }
 
-template<typename T>
-MutantStack<T>::MutantStack(MutantStack const &src) : std::stack<T>(src)
-{
-
-}
-
-template<typename T>
-MutantStack<T>& MutantStack<T>::operator=(MutantStack const &src)
-{
-    this->c = src.c;
-    return (*this);
-}
 #endif
